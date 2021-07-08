@@ -1,5 +1,5 @@
 # angel_dress
-Changement
+Publication
 Angel dress app
 
 ## Getting Started
