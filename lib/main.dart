@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     precacheImage(AssetImage('assets/3071357.jpg'), context);
     return MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: 'Splash Screen',
+    title: 'Splash Screen Images',
     home: FirstSplashScreen(),
     //   home: SplashScreen1(),
   );
