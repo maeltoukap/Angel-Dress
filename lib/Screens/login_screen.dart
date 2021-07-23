@@ -1,10 +1,12 @@
+import 'package:angel_dress/Services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../Functions/Splash_screen/const.dart';
 import '../widgets/widgets.dart';
 
-class LoginPage extends StatelessWidget {
+class LogPage extends StatelessWidget {
+  AuthService auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -77,9 +79,9 @@ class LoginPage extends StatelessWidget {
                                   ),
                                   onPressed: () =>
                                       MyNavigator.signinScreenNavigator(context)
-                                // duration: Duration(milliseconds: 300),
-                                // curve: Curves.easeIn),
-                              ),
+                                  // duration: Duration(milliseconds: 300),
+                                  // curve: Curves.easeIn),
+                                  ),
                             ),
                             SizedBox(
                               height: 30,

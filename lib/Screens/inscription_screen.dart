@@ -1,9 +1,10 @@
+import 'package:angel_dress/Services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 import '../widgets/widgets.dart';
+
 class Inscription extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -34,9 +35,10 @@ class InscriptionState extends State<Inscription> {
 
         return null;
       },
-      onSaved: (String value) {
-        _name = value;
-      },
+      onChanged: (value) => _name = value,
+      // onSaved: (String value) {
+      //   _name = value;
+      // },
     );
   }
 
@@ -59,9 +61,10 @@ class InscriptionState extends State<Inscription> {
 
         return null;
       },
-      onSaved: (String value) {
-        _email = value;
-      },
+      onChanged: (value) => _email = value,
+      // onSaved: (String value) {
+      //   _email = value;
+      // },
     );
   }
 
@@ -80,9 +83,10 @@ class InscriptionState extends State<Inscription> {
 
         return null;
       },
-      onSaved: (String value) {
-        _username = value;
-      },
+      onChanged: (value) => _username = value,
+      // onSaved: (String value) {
+      //   _username = value;
+      // },
     );
   }
 
@@ -100,9 +104,10 @@ class InscriptionState extends State<Inscription> {
 
         return null;
       },
-      onSaved: (String value) {
-        _phoneNumber = value;
-      },
+      onChanged: (value) => _phoneNumber = value,
+      // onSaved: (String value) {
+      //   _phoneNumber = value;
+      // },
     );
   }
 
@@ -136,7 +141,7 @@ class InscriptionState extends State<Inscription> {
 
         return null;
       },
-      onSaved: (val) => _password = val,
+      onSaved: (value) => _password = value,
       obscureText: obscureText,
       // onSaved: (String value) {
       //   _password = value;
@@ -162,12 +167,12 @@ class InscriptionState extends State<Inscription> {
         if (value != _password) return "Veuillez verifier votre mdp";
         return null;
       },
-      onSaved: (String value) {
-        _cpassword = value;
-      },
+      onChanged: (value) => _cpassword = value,
+      obscureText: obscureText,
     );
   }
 
+  AuthService auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -225,9 +230,12 @@ class InscriptionState extends State<Inscription> {
                               fontSize: 16,
                               letterSpacing: 2.0),
                         ),
-                        onPressed: () {
-                          if (!_formKey.currentState.validate()) {
-                            return;
+                        onPressed: () async {
+                          if (_formKey.currentState.validate()) {
+                            print(_email + _password);
+                            bool register =
+                                await auth.signUp(_email, _password);
+                            if (register) Navigator.of(context).pop();
                           }
 
                           _formKey.currentState.save();
