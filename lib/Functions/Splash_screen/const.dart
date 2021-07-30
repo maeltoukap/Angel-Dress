@@ -1,5 +1,5 @@
 import 'package:angel_dress/Screens/log_or_sign.dart';
-import 'package:angel_dress/Screens/log_screen.dart';
+import '../../Screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,11 +7,13 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../Screens/Splash_screen/third_splash_screen.dart';
 import 'package:angel_dress/Screens/Splash_screen/fourth_splash_screen.dart';
 import '../../Screens/inscription_screen.dart';
-import '../../Screens/insc_screen.dart';
+import '../../Others/insc_screen.dart';
 import '../../Screens/log_or_sign.dart';
-import '../../Screens/login_screen.dart';
+import '../../Others/login_screen.dart';
 
+// Colors
 const SplashbgColor = 0xff000000;
+const Color firstColor = Color(0xffff6404);
 // const SplashbgColor = Colors.white;
 // const textColor = 0xffdb7032;
 const textColor = 0xffffffff;
@@ -31,11 +33,11 @@ var  kBodyText = GoogleFonts.montserrat(
   color: Colors.white,
 );
 const TextStyle smallkBodyText = TextStyle(
-  fontSize: 16,
+  fontSize: 18,
   color: Colors.white,
 );
 
-
+// Naigators
 class MyNavigator {
   static void thirdSplashScreenNavigator(BuildContext context) {
     Navigator.push(
@@ -72,8 +74,8 @@ class MyNavigator {
       context,
       MaterialPageRoute(
         builder: (BuildContext context) {
-          return inscPAge();
           // return inscPAge();
+          return Inscription();
         },
       ),
     );

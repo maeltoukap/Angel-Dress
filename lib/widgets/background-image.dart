@@ -17,7 +17,8 @@ class BackgroundImage extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/3071357.jpg'),
+            image: AssetImage('assets/Form-background.png'),
+            // image: AssetImage('assets/3071357.jpg'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
           ),

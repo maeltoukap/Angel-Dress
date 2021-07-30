@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Angel Dress</string>
+    <string name="facebook_app_id">260228222193960</string> <string name="fb_login_protocol_scheme">fb260228222193960</string>
+</resources>

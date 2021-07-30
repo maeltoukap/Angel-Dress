@@ -1,6 +1,5 @@
 import 'package:angel_dress/Screens/Home.dart';
-import 'package:angel_dress/Screens/log_screen.dart';
-import 'package:angel_dress/Screens/login_screen.dart';
+import 'login_screen.dart';
 import 'package:angel_dress/Services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
