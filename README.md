@@ -1,6 +1,6 @@
 # angel_dress
-Publication
-Angel dress app
+
+A new Flutter application.
 
 ## Getting Started
 
