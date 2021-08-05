@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "954984354169",
+    "project_id": "angeldressacheteur",
+    "storage_bucket": "angeldressacheteur.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954984354169:android:53ce56b1d9d7d2fcdb5fa8",
+        "android_client_info": {
+          "package_name": "com.example.angel_dress_acheteur"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954984354169-voranolb0qrbcsf279iaggv6dlsjijee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChjBkvO23Vyg7GOMV-UNAnUCtfGW-4NNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954984354169-voranolb0qrbcsf279iaggv6dlsjijee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
