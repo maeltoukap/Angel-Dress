@@ -26,7 +26,7 @@ class AuthService {
             password: pass));
         return true;
       }
-
+ 
       return false;
     } catch (e) {
       return false;
@@ -53,11 +53,20 @@ class AuthService {
   Future<bool> signIn(String email, String pass) async {
     try {
       final result =
-          await auth.signInWithEmailAndPassword(email: email, password: pass);
+      await auth.signInWithEmailAndPassword(email: email, password: pass);
       // final result = await auth.createUserWithEmailAndPassword(
       //     email: email, password: pass);
       if (result.user != null) return true;
       return false;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  Future<bool> resetPassword(String email) async {
+    try {
+      await auth.sendPasswordResetEmail(email: email);
+      return true;
     } catch (e) {
       return false;
     }

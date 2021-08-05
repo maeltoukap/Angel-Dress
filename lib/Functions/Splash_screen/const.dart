@@ -22,6 +22,11 @@ const skipStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 20.0,
 );
+
+const messagesGreen = TextStyle(
+  fontSize: 18,
+  color: Colors.green,
+);
 //Header des formulaires
 var kHeading = GoogleFonts.montserrat(
   fontSize: 35,

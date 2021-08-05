@@ -80,8 +80,25 @@ class _HomePageState extends State<HomePage> {
           IconButton(
               icon: Icon(FontAwesomeIcons.signOutAlt),
               onPressed: () async {
-                await auth.signOut();
-                setState(() {});
+                showDialog(context: context, builder: (ctx){
+                  return AlertDialog(
+                    title: Text("Deconnexion"),
+                    content: Text("Voulez vous vous deconnecter ?"),
+                    actions: [
+                      FlatButton(onPressed: () async{
+                        await auth.signOut();
+                        setState(() {});
+                        Navigator.of(context).pop();
+                        },
+                          child: Text("Oui")
+                      ),
+                      FlatButton(onPressed: () async {
+                        Navigator.of(context).pop();},
+                        child:
+                        Text("Non"),
+                      ),],
+                  );
+                });
               })
         ],
       ),

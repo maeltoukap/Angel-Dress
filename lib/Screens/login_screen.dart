@@ -1,6 +1,7 @@
 import 'package:angel_dress/Functions/Splash_screen/const.dart';
 import 'package:angel_dress/Functions/loading.dart';
 import 'package:angel_dress/Screens/home.dart';
+import 'package:angel_dress/Screens/reset_screen.dart';
 import 'package:angel_dress/Services/auth_service.dart';
 import 'package:angel_dress/Services/google_service.dart';
 import 'package:angel_dress/Services/facebook_service.dart';
@@ -191,6 +192,12 @@ class _LoginPageState extends State<LoginPage> {
                         children: <Widget>[
                           _buildEmail(),
                           _buildPassword(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              TextButton(child: Text("Mot de passe oublié ?", style: TextStyle(color: Colors.white),), onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResetScreen())),)
+                            ],
+                          ),
                           // SizedBox(height: 100),
                           // ButtonTheme(
                           //   minWidth: 300.0,
@@ -214,7 +221,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 30,
+                          height: 7,
                         ),
                         new RoundedButton(
                           buttonText: 'Se connecter',
@@ -246,7 +253,7 @@ class _LoginPageState extends State<LoginPage> {
                           },
                         ),
                         SizedBox(
-                          height: 50,
+                          height: 15,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -270,7 +277,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         DotDivider(),
                         SizedBox(
-                          height: 30,
+                          height: 20,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
