@@ -149,7 +149,7 @@ import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 class LoginWithFacebook {
   bool isSignIn = false;
   FirebaseAuth _auth = FirebaseAuth.instance;
-  User _user;
+  User user;
   FacebookLogin facebookLogin = FacebookLogin();
 
   // @override
@@ -200,7 +200,7 @@ class LoginWithFacebook {
   //   );
   // }
 
-  Future<void> handleLogin() async {
+  Future<bool> handleLogin() async {
     final FacebookLoginResult result = await facebookLogin.logInWithReadPermissions(['email']);
     switch (result.status) {
       case FacebookLoginStatus.cancelledByUser:
@@ -225,7 +225,7 @@ class LoginWithFacebook {
     // setState(() {
     if(a != null){
       isSignIn = true;
-      _user = a.user;}
+      user = a.user;}
     // });
   // }
 

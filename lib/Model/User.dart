@@ -1,11 +1,11 @@
 class UserM {
-  String id, name, username, email, password;
+  String id, displayName, username, email, password;
   int phone;
   bool admin, enable;
   static UserM currentUser;
   UserM(
       {this.id,
-      this.name,
+      this.displayName,
       this.email,
       this.username,
       this.phone,
@@ -14,7 +14,7 @@ class UserM {
       this.enable = true,});
   factory UserM.fromJson(Map<String, dynamic> j) => UserM(
       id: j['id'],
-      name: j['name'],
+      displayName: j['name'],
       email: j['email'],
       username: j['username'],
       phone: j['phone'],
@@ -23,7 +23,7 @@ class UserM {
       enable: j["enable"]);
   Map<String, dynamic> toMap() => {
         "id": id,
-        "name": name,
+        "name": displayName,
         "email": email,
         "username": username,
         "phone": phone,

@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
     precacheImage(AssetImage('assets/494640.png'), context);
     //Mise en cache des images d'authentification
     precacheImage(AssetImage('assets/3071357.jpg'), context);
+    precacheImage(AssetImage('assets/user.png'), context);
     precacheImage(AssetImage('assets/Form-background.png'), context);
     return ChangeNotifierProvider(
       create: (context) => GoogleSignInProvider(),

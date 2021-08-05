@@ -284,6 +284,7 @@ class _LoginPageState extends State<LoginPage> {
                               buttonText: "GOOGLE",
                               onPressed: () {
                                 print("google");
+                                // loading(context);
                                 final provider =
                                     Provider.of<GoogleSignInProvider>(context,
                                         listen: false);
@@ -298,8 +299,14 @@ class _LoginPageState extends State<LoginPage> {
                               ApiButtonColor: Colors.blueAccent,
                               buttonText: "FACEBOOK",
                               onPressed: () async {
+                                // loading(context);
                                 print("facebook");
-                                await LoginWithFacebook().handleLogin();
+                               await LoginWithFacebook().handleLogin();
+                                // if (LoginWithFacebook().handleLogin() != null) {
+                                //   Navigator.of(context).pop();
+                                //   if (!LoginWithFacebook().handleLogin())
+                                //     print("Network error please retry later");
+                                // }
                                 // final login = await logg().loginWithFB();
                                 // print("--------------$login----------");
                                 // if (logg().isLoggedIn = true) {

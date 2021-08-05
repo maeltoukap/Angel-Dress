@@ -10,13 +10,20 @@ class AuthService {
     final user = FirebaseAuth.instance.currentUser;
     return user;
   }
-  Future<bool> signUp(String name, String email, String username, int phone, String pass) async {
+
+  Future<bool> signUp(String name, String email, String username, int phone,
+      String pass) async {
     try {
       final result = await auth.createUserWithEmailAndPassword(
           email: email, password: pass);
       if (result.user != null) {
-        await DBServices()
-            .saveUser(UserM(id: result.user.uid, name: name, email: email, username: username, phone: phone, password: pass));
+        await DBServices().saveUser(UserM(
+            id: result.user.uid,
+            displayName: name,
+            email: email,
+            username: username,
+            phone: phone,
+            password: pass));
         return true;
       }
 
@@ -46,7 +53,7 @@ class AuthService {
   Future<bool> signIn(String email, String pass) async {
     try {
       final result =
-      await auth.signInWithEmailAndPassword(email: email, password: pass);
+          await auth.signInWithEmailAndPassword(email: email, password: pass);
       // final result = await auth.createUserWithEmailAndPassword(
       //     email: email, password: pass);
       if (result.user != null) return true;
@@ -64,4 +71,3 @@ class AuthService {
     }
   }
 }
-
