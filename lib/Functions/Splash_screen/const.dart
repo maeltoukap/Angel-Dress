@@ -14,6 +14,7 @@ import '../../Others/login_screen.dart';
 // Colors
 const SplashbgColor = 0xff000000;
 const Color firstColor = Color(0xffff6404);
+const Color MainColor = Color(0xffff6404);//orange
 // const SplashbgColor = Colors.white;
 // const textColor = 0xffdb7032;
 const textColor = 0xffffffff;
